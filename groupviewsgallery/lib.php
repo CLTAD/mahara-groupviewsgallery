@@ -164,8 +164,8 @@ class PluginBlocktypeGroupViewsGallery extends SystemBlocktype {
         $limit = isset($configdata['viewsperpage']) ? $configdata['viewsperpage'] : 20;
         $items = self::get_data($groupid, $offset, $limit, null, $configdata);
 
-        if(empty($items) || !isset($items)){
-            return get_string('nopagesfound', 'blocktype.groupviewsgallery');
+        if(!isset($items) || $items['count'] === 0) {
+            return '<div align="center">' . get_string('nopagesfound', 'blocktype.groupviewsgallery') . '</div>';
         }
         self::build_browse_list_html($items, $groupid, $instance->get('id'), $configdata);
 

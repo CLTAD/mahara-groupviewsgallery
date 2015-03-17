@@ -27,7 +27,7 @@ defined('INTERNAL') || die();
 
 $string['title'] = 'Group pages gallery';
 $string['description'] = 'Visual display of pages related to the group';
-$string['nopagesfound'] = 'No pages found';
+$string['nopagesfound'] = 'No gallery pages found yet';
 $string['nogroupfound'] = 'Error retrieving group';
 $string['noviewsselected'] = 'You haven\'t selected any pages to show!';
 $string['invalidids'] = 'Ids of images to exclude should be numerical, separated by commas!';
