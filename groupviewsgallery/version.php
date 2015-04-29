@@ -27,4 +27,4 @@ defined('INTERNAL') || die();
 
 $config = new StdClass;
 $config->version = 2015022400;
-$config->release = '0.0.2';
+$config->release = '0.1.0';

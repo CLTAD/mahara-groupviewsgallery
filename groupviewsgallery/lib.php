@@ -87,6 +87,22 @@ class PluginBlocktypeGroupViewsGallery extends SystemBlocktype {
                 'size' => 4,
                 'rules' => array('integer' => true, 'minvalue' => 1, 'maxvalue' => 50),
             ),
+            'thumbnailsizewidth' => array(
+                'type'  => 'text',
+                'title' => get_string('thumbnailsizewidth','blocktype.groupviewsgallery'),
+                'description' => get_string('thumbnailsizewidthdesc', 'blocktype.groupviewsgallery'),
+                'defaultvalue' => isset($configdata['thumbnailsizewidth']) ? $configdata['thumbnailsizewidth'] : 150,
+                'size' => 4,
+                'rules' => array('integer' => true, 'minvalue' => 100, 'maxvalue' => 600),
+            ),
+            'thumbnailsizeheight' => array(
+                'type'  => 'text',
+                'title' => get_string('thumbnailsizeheight','blocktype.groupviewsgallery'),
+                'description' => get_string('thumbnailsizeheightdesc', 'blocktype.groupviewsgallery'),
+                'defaultvalue' => isset($configdata['thumbnailsizeheight']) ? $configdata['thumbnailsizeheight'] : 120,
+                'size' => 4,
+                'rules' => array('integer' => true, 'minvalue' => 100, 'maxvalue' => 600),
+            ),
             'moreoptionstoggle' => array(
                     'type'         => 'fieldset',
                     'collapsible'  => true,
@@ -337,6 +353,8 @@ class PluginBlocktypeGroupViewsGallery extends SystemBlocktype {
             }
 
             $items = array(
+                    'cellwidth'  => isset($configdata['thumbnailsizewidth'])? $configdata['thumbnailsizewidth'] : 150,
+                    'cellheight' => isset($configdata['thumbnailsizeheight'])? $configdata['thumbnailsizeheight'] : 120,
                     'count'  => $allviews->count,
                     'data'   => $contents,
                     'offset' => $offset,
